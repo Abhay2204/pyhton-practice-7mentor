@@ -60,9 +60,24 @@ head, *tail = data
 print("Head:", head)
 print("Tail:", tail)
 
+# Nested tuple unpacking exercise
+nested_data = [(1, 2), (3, 4)]
+(a, b), (c, d) = nested_data
+print("Unpacked nested data:", [a, b, c, d])
+
 
 # ==========================================
-# 5. TUPLE METHODS & BUILT-IN FUNCTIONS
+# 5. REMOVING FROM TUPLE VIA SLICING
+# ==========================================
+
+basket = ("Mobile", "Mini car", "Jcb", "Ball")
+print("Original Basket:", basket)
+basket_slice = basket[1:]
+print("After removing Mobile:", basket_slice)
+
+
+# ==========================================
+# 6. TUPLE METHODS & BUILT-IN FUNCTIONS
 # ==========================================
 
 sample_tuple = (5, 2, 8, 2, 9, 2, 1)

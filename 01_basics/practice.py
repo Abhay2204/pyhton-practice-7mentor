@@ -111,3 +111,11 @@ count -= 4  # count = 26
 count //= 3 # count = 8
 
 print("Final count value:", count)
+
+# ==========================================
+# 7. STRING CONCATENATION EXERCISE
+# ==========================================
+first_name = "ANNURUDH"
+last_name = "JADAV"
+full_name = first_name + " " + last_name
+print("Full Name Concatenation:", full_name)

@@ -40,3 +40,11 @@ print("Values:", list(student.values()))
 print("\nKey-Value Pairs:")
 for key, val in student.items():
     print(f"  {key}: {val}")
+
+
+# ==========================================
+# 3. SIMPLE DICT & MARKS
+# ==========================================
+
+a = {"name": "abhay", "marks": 99}
+print("\nSimple dict 'a':", a)
