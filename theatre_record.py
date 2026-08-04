@@ -5,6 +5,7 @@
 # - Add heroine name
 # - Add director name
 
+# Approach 1: Single Record Dictionary
 theatre_record = {
     "theatre_name": "PVR ICON IMAX",
     "movie_name": "Spider-Man: Brand New Day",
@@ -13,12 +14,19 @@ theatre_record = {
     "director_name": "Destin Daniel Cretton"
 }
 
-print("+" + "-" * 20 + "+" + "-" * 27 + "+")
-print(f"| {'FIELD':<18} | {'DETAILS':<25} |")
-print("+" + "-" * 20 + "+" + "-" * 27 + "+")
+print("1. Single Record Dictionary:")
+print(theatre_record)
 
-for key, value in theatre_record.items():
-    field_name = key.replace("_", " ").title()
-    print(f"| {field_name:<18} | {value:<25} |")
+print("\n" + "="*60 + "\n")
 
-print("+" + "-" * 20 + "+" + "-" * 27 + "+")
+# Approach 2: Multiple Records Dictionary (Lists as Values)
+movies_record = {
+    "t name": ["pvr", "inox", "city pride", "ashok"],
+    "movie name": ["pushpa", "raja shivchhatrapati", "chhava", "thor"],
+    "hero": ["allu arjun", "sharad kelkar", "vicky kaushal", "chris hemsworth"],
+    "heroine": ["rashmika", "mrunal thakur", "rashmika", "natalie portman"],
+    "director": ["sukumar", "digpal lanjekar", "laxman uttekar", "taika waititi"]
+}
+
+print("2. Multiple Records Dictionary (Lists as Values):")
+print(movies_record)
