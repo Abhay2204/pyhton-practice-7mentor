@@ -6,12 +6,12 @@ constituency_mla = {
     "Hadapsar": "Chetan Tupe"
 }
 
-
+print("Original Constituency & MLA Record:")
 print(constituency_mla)
 
 removed_mla = constituency_mla.pop("Chinchwad")
 
-print("Removed MLA from Chinchwad:", removed_mla)
+print("\nRemoved MLA from Chinchwad:", removed_mla)
 
-print("Updated Constituency & MLA Record:")
+print("\nUpdated Constituency & MLA Record:")
 print(constituency_mla)
