@@ -38,6 +38,7 @@ Overall Syllabus Completion: [████████████████�
 | **[08. Set Theory & Operations](08_sets/)** | [`explanation.md`](08_sets/explanation.md) | [`examples.py`](08_sets/examples.py) | [`questions.md`](08_sets/questions.md) | [`practice.py`](08_sets/practice.py) | Uniqueness, `.add()`, `.update()`, `.remove()` vs `.discard()`, Union (`\|`), Intersect (`&`), Diff (`-`), Sym-Diff (`^`), Frozenset |
 | **[09. Dictionaries & Collections](09_dictionaries/)** | [`explanation.md`](09_dictionaries/explanation.md) | [`examples.py`](09_dictionaries/examples.py) | [`questions.md`](09_dictionaries/questions.md) | [`practice.py`](09_dictionaries/practice.py) | Key-Value Access, Safe `.get()`, Key/Value Iteration (`.items()`), Word Frequency Counter, Dict Comprehension |
 | **[10. Real World Projects](10_real_world_projects/)** | [`explanation.md`](10_real_world_projects/explanation.md) | [`examples.py`](10_real_world_projects/examples.py) | [`questions.md`](10_real_world_projects/questions.md) | Various Scripts | Newspaper Vendor Stock, SSMV School Roll Management, Pune Colleges NAAC Grade Tracking |
+| **[12. For Loops & Iteration](12_for_loops/)** | [`explanation.md`](12_for_loops/explanation.md) | [`examples.py`](12_for_loops/examples.py) | [`questions.md`](12_for_loops/questions.md) | [`practice.py`](12_for_loops/practice.py) | `range()` variations, sequence iteration, `enumerate()`, `zip()`, `for-else`, nested pattern algorithms |
 
 ---
 
@@ -91,13 +92,19 @@ pyhton practice 7mentor/
 │   ├── 🐍 examples.py
 │   ├── 📜 questions.md
 │   └── 🐍 practice.py
-└── 📁 10_real_world_projects/     # Real-world scenario mini-projects
+├── 📁 10_real_world_projects/     # Real-world scenario mini-projects
+│   ├── 📜 explanation.md
+│   ├── 🐍 examples.py
+│   ├── 📜 questions.md
+│   ├── 🐍 newspaper_seller.py
+│   ├── 🐍 ssmv_school.py
+│   └── 🐍 pune_colleges_record.py
+└── 📁 12_for_loops/               # For loop iterations, enumerate, zip, pattern printing
+    ├── 📜 README.md
     ├── 📜 explanation.md
     ├── 🐍 examples.py
     ├── 📜 questions.md
-    ├── 🐍 newspaper_seller.py
-    ├── 🐍 ssmv_school.py
-    └── 🐍 pune_colleges_record.py
+    └── 🐍 practice.py
 ```
 
 ---

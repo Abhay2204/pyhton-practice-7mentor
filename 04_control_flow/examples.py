@@ -46,3 +46,17 @@ while temp > 0:
     fact *= temp
     temp -= 1
 print(f"{n}! =", fact)
+
+
+
+
+age = int(input("enter the value of age: "))
+has_license = input("do you have license? (yes/no): ").strip().lower()
+
+if age >= 18:
+    if has_license == "yes" :
+        print("ready to buy car")
+    else:
+        print("you are not ready to buy car")
+else:
+    print("you are so small")
