@@ -324,8 +324,10 @@ pyhton practice 7mentor/
 ├── 📁 08_sets/                         # Set theory, venn logic, frozensets
 │   ├── 📜 explanation.md
 │   ├── 🐍 examples.py
-│   ├── 📜 questions.md
-│   └── 🐍 practice.py
+│   ├── 🐍 questions.md
+│   ├── 🐍 practice.py
+│   ├── 🐍 set_loop.py
+│   └── 🐍 set_practice.py
 ├── 📁 09_dictionaries/                 # Dictionary manipulation & frequency counters
 │   ├── 📜 explanation.md
 │   ├── 🐍 examples.py
