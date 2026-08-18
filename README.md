@@ -335,9 +335,11 @@ pyhton practice 7mentor/
 │   ├── 📜 explanation.md
 │   ├── 🐍 examples.py
 │   ├── 📜 questions.md
+│   ├── 🐍 maharashtra_election.py
 │   ├── 🐍 newspaper_seller.py
-│   ├── 🐍 ssmv_school.py
-│   └── 🐍 pune_colleges_record.py
+│   ├── 🐍 pune_colleges_record.py
+│   ├── 🐍 real_estate_record.py
+│   └── 🐍 ssmv_school.py
 ├── 📁 11_mysql/                        # MySQL — all topics before JOINs
 │   ├── 🗄️ mysql.sql                   # CREATE, INSERT, SELECT, WHERE, GROUP BY, UPDATE, ALTER
 │   └── 🗄️ ott_platform.sql            # OTT Platform practice data

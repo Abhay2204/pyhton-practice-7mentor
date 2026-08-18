@@ -2,7 +2,8 @@
 Python Basics Practice Questions
 ---------------------------------
 This file contains basic practice questions covering variables, data types,
-type casting, input/output formatting, arithmetic, comparison, and logical operators.
+type casting, input/output formatting, arithmetic, comparison, logical,
+assignment operators, bitwise, base conversions, string methods, list, and tuple operations.
 """
 
 # ==========================================
@@ -42,7 +43,7 @@ print("bool(42):", bool(42))
 
 
 # ==========================================
-# 3. INPUT / OUTPUT & F-STRINGS
+# 3. INPUT / OUTPUT & USER INPUT
 # ==========================================
 
 # Q6: Format and print a multi-line output using f-strings.
@@ -53,6 +54,11 @@ total = price * quantity
 
 print(f"Product: {product}\nPrice: ${price}\nQuantity: {quantity}\nTotal Cost: ${total:.2f}")
 
+# Q7: Example of getting user input (commented out so file runs automatically)
+# user_name = input("Enter your name: ")
+# user_age = int(input("Enter your age: "))
+# print(f"Hello {user_name}, next year you will be {user_age + 1} years old.")
+
 
 # ==========================================
 # 4. ARITHMETIC OPERATORS
@@ -61,7 +67,7 @@ print(f"Product: {product}\nPrice: ${price}\nQuantity: {quantity}\nTotal Cost: $
 a = 17
 b = 5
 
-# Q7: Perform addition, subtraction, multiplication, division, floor division, modulus, and exponentiation.
+# Q8: Perform addition, subtraction, multiplication, division, floor division, modulus, and exponentiation.
 print("Addition (17 + 5):", a + b)
 print("Subtraction (17 - 5):", a - b)
 print("Multiplication (17 * 5):", a * b)
@@ -79,13 +85,13 @@ x = 15
 y = 20
 z = 15
 
-# Q8: Check comparison operations.
+# Q9: Check comparison operations.
 print("x == z:", x == z)
 print("x != y:", x != y)
 print("x > y:", x > y)
 print("x <= z:", x <= z)
 
-# Q9: Evaluate logical expressions using 'and', 'or', 'not'.
+# Q10: Evaluate logical expressions using 'and', 'or', 'not'.
 has_license = True
 has_car = False
 
@@ -104,10 +110,114 @@ print("Not has license:", cannot_drive)
 
 count = 10
 
-# Q10: Use shorthand assignment operators (+=, -=, *=, /=).
+# Q11: Use shorthand assignment operators (+=, -=, *=, /=).
 count += 5  # count = 15
 count *= 2  # count = 30
 count -= 4  # count = 26
 count //= 3 # count = 8
 
 print("Final count value:", count)
+
+print("=" * 60)
+
+
+# ==========================================
+# 7. OPERATORS & MEMORY
+# ==========================================
+
+# Identity vs Equality: is vs ==
+list1 = [1, 2, 3]
+list2 = [1, 2, 3]
+print("list1 == list2 (Value check):", list1 == list2)
+print("list1 is list2 (Memory check id):", list1 is list2)
+
+# Membership Operators: in, not in
+fruits = ["apple", "banana", "cherry"]
+print("'banana' in fruits:", "banana" in fruits)
+print("'mango' not in fruits:", "mango" not in fruits)
+
+# Chained Comparisons: 10 <= x <= 20
+num_check = 15
+print("10 <= num_check <= 20:", 10 <= num_check <= 20)
+
+# Bitwise Operators: &, |, ^, ~, <<, >>
+p, q = 6, 3
+print("Bitwise AND (6 & 3):", p & q)
+print("Bitwise OR (6 | 3):", p | q)
+print("Bitwise XOR (6 ^ 3):", p ^ q)
+print("Bitwise NOT (~6):", ~p)
+print("Left Shift (6 << 1):", p << 1)
+print("Right Shift (6 >> 1):", p >> 1)
+
+print("=" * 60)
+
+
+# ==========================================
+# 8. BASE & ASCII CONVERSIONS
+# ==========================================
+
+# Base Conversions: bin(), oct(), hex(), int("1010", 2)
+num_val = 10
+print("bin(10):", bin(num_val))
+print("oct(10):", oct(num_val))
+print("hex(10):", hex(num_val))
+print("int('1010', 2):", int("1010", 2))
+
+# ASCII Conversions: ord('A'), chr(65)
+print("ord('A'):", ord('A'))
+print("chr(65):", chr(65))
+
+print("=" * 60)
+
+
+# ==========================================
+# 9. STRING METHODS & SLICING
+# ==========================================
+
+msg = "PythonProgramming"
+print("Slicing [0:6]:", msg[0:6])
+print("Reversed string msg[::-1]:", msg[::-1])
+
+raw_text = "   hello python   "
+print("strip():", f"'{raw_text.strip()}'")
+
+words = msg.split("n")
+print("split('n'):", words)
+
+print("replace('Python', 'Java'):", msg.replace("Python", "Java"))
+print("'12345'.isdigit():", '12345'.isdigit())
+print("'Python'.isalpha():", 'Python'.isalpha())
+
+print("=" * 60)
+
+
+# ==========================================
+# 10. LIST OPERATIONS
+# ==========================================
+
+nums = [10, 20]
+nums.append(30)
+nums.extend([40, 50])
+nums.insert(1, 15)
+print("List After Adding:", nums)
+
+nums.pop(0)
+nums.remove(40)
+print("List After Removing:", nums)
+
+sample_list = [5, 2, 9, 1]
+sample_list.sort(reverse=True)
+print("List Sorted Descending:", sample_list)
+
+print("=" * 60)
+
+
+# ==========================================
+# 11. TUPLE OPERATIONS
+# ==========================================
+
+t_single = (5,)
+print("Single element tuple:", type(t_single), t_single)
+
+a_val, b_val, *c_val = (1, 2, 3, 4, 5)
+print("Tuple Unpacking -> a:", a_val, "| b:", b_val, "| *c:", c_val)
