@@ -59,3 +59,46 @@ for digit in num_str:
     digit_sum += int(digit)
 print(f"Sum of digits: {digit_sum}")  # 30
 ```
+
+---
+
+### Challenge 5: Multiplication Table of 124 with Even/Odd Label
+**Problem:** Print the multiplication table of `124` from 1 to 10 using a `for` loop.
+For each result, use an `if/else` to label whether the product is **Even** or **Odd**.
+
+**Expected Output:**
+```
+124 x  1 =   124  → Even
+124 x  2 =   248  → Even
+124 x  3 =   372  → Even
+...
+124 x 10 =  1240  → Even
+```
+
+**Solution — Approach 1: `for` loop + `if/else`**
+```python
+number = 124
+
+print(f"--- Multiplication Table of {number} ---")
+for i in range(1, 11):
+    result = number * i
+    if result % 2 == 0:
+        label = "Even"
+    else:
+        label = "Odd"
+    print(f"{number} x {i:2d} = {result:5d}  → {label}")
+```
+
+**Solution — Approach 2: Ternary (one-liner `if/else`)**
+```python
+number = 124
+
+print(f"--- Multiplication Table of {number} (Ternary) ---")
+for i in range(1, 11):
+    result = number * i
+    label = "Even" if result % 2 == 0 else "Odd"
+    print(f"{number} x {i:2d} = {result:5d}  → {label}")
+```
+
+> 💡 **Observation:** Since 124 is even, multiplying it by any integer always gives an **Even** result.
+> The `if/else` check is still good practice — try it with an odd number like `125` to see `Odd` labels appear!
