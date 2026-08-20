@@ -24,7 +24,7 @@
 ## 📈 Learning Progress & Topic Modules
 
 ```
-Overall Syllabus Completion: [████████████████████████████░░░░] 90%
+Overall Syllabus Completion: [████████████░░░░░░░░░░░░] 50%
 ```
 
 | Topic / Folder | Explanation | Examples | Questions | Practice | Key Concepts Covered |
@@ -408,6 +408,6 @@ pyhton practice 7mentor/
 ---
 
 <div align="center">
-  <sub>Maintained with ❤️ by <b>Abhay Mallick</b> as part of Python Training at 7Mentor.</sub>
+  <sub>Maintained with ❤️ by <b>Abhay Mallick</b> as part of   DATA SCIENCE Training at 7Mentor.</sub>
 </div>
 
