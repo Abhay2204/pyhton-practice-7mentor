@@ -1,0 +1,127 @@
+{
+    "users": [
+        {
+            "username": "admin",
+            "password": "Admin@123",
+            "full_name": "Platform Super Admin",
+            "role": "platform_admin",
+            "college": "Global Platform",
+            "email": "admin@platform.com"
+        },
+        {
+            "username": "coep_admin",
+            "password": "College@123",
+            "full_name": "COEP College Dean",
+            "role": "college_admin",
+            "college": "COEP Pune",
+            "email": "dean@coep.ac.in"
+        },
+        {
+            "username": "teacher1",
+            "password": "Teacher@123",
+            "full_name": "Prof. Rajesh Sharma",
+            "role": "teacher_admin",
+            "college": "COEP Pune",
+            "department": "Computer Science",
+            "email": "sharma@coep.ac.in"
+        },
+        {
+            "username": "student1",
+            "password": "Student@123",
+            "full_name": "Rahul Verma",
+            "role": "student_admin",
+            "college": "COEP Pune",
+            "roll_no": "CS-101",
+            "branch": "Computer Science",
+            "email": "rahul@coep.ac.in"
+        },
+        {
+            "username": "new_user_1",
+            "password": "ValidPass@123",
+            "full_name": "John Doe",
+            "role": "student_admin",
+            "college": "COEP Pune",
+            "email": ""
+        }
+    ],
+    "colleges": [
+        {
+            "name": "COEP Pune",
+            "city": "Pune",
+            "code": "COEP01"
+        },
+        {
+            "name": "PICT Pune",
+            "city": "Pune",
+            "code": "PICT02"
+        },
+        {
+            "name": "MIT Pune",
+            "city": "Pune",
+            "code": "MIT03"
+        }
+    ],
+    "marks": [
+        {
+            "student_username": "student1",
+            "subject": "Python Programming",
+            "marks": 88,
+            "max_marks": 100,
+            "grade": "A"
+        },
+        {
+            "student_username": "student1",
+            "subject": "Data Structures",
+            "marks": 92,
+            "max_marks": 100,
+            "grade": "A+"
+        },
+        {
+            "student_username": "student1",
+            "subject": "Database Systems",
+            "marks": 81,
+            "max_marks": 100,
+            "grade": "A"
+        },
+        {
+            "student_username": "student1",
+            "subject": "Machine Learning",
+            "marks": 95,
+            "max_marks": 100,
+            "grade": "A+"
+        },
+        {
+            "student_username": "student1",
+            "subject": "pyhtin",
+            "marks": 85.0,
+            "max_marks": 100.0,
+            "grade": "A"
+        }
+    ],
+    "attendance": [
+        {
+            "student_username": "student1",
+            "subject": "Python Programming",
+            "total_classes": 40,
+            "attended_classes": 37
+        },
+        {
+            "student_username": "student1",
+            "subject": "Data Structures",
+            "total_classes": 45,
+            "attended_classes": 41
+        },
+        {
+            "student_username": "student1",
+            "subject": "Database Systems",
+            "total_classes": 38,
+            "attended_classes": 34
+        },
+        {
+            "student_username": "student1",
+            "subject": "Machine Learning",
+            "total_classes": 50,
+            "attended_classes": 48
+        }
+    ]
+}

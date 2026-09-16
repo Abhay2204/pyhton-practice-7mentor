@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusOS — Institutional Access &amp; Workspace Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════
+     LOGIN PAGE
+══════════════════════════════════════════════ -->
+<div id="loginPage" class="page login-page-wrap">
+
+    <!-- Clean Top Bar -->
+    <header class="top-nav-bar">
+        <div class="brand-badge">
+            <div class="brand-logo-box">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+            </div>
+            <span class="brand-name">Campus<strong>OS</strong></span>
+            <span class="brand-pill">v2.4 Enterprise</span>
+        </div>
+
+        <div class="status-indicator-pill">
+            <span class="pulse-dot"></span>
+            <span>All Services Operational</span>
+        </div>
+    </header>
+
+    <!-- Main Container: Clean Minimal Split Layout -->
+    <main class="login-wrapper">
+
+        <!-- LEFT COLUMN: Minimal Hero & Demo Credentials -->
+        <div class="hero-card">
+            <div class="hero-top-badge">
+                <span class="dot-accent"></span> Unified Campus Architecture
+            </div>
+
+            <h1 class="hero-heading">
+                Role-based access <br>for academic systems.
+            </h1>
+
+            <p class="hero-description">
+                A streamlined authentication matrix for universities, faculty, department heads, and students. Isolated workspaces with role-enforced security.
+            </p>
+
+            <!-- Feature Tags -->
+            <div class="feature-pills-row">
+                <span class="feat-pill"><span class="pill-dot"></span> Instant RBAC</span>
+                <span class="feat-pill"><span class="pill-dot"></span> SHA Audit</span>
+                <span class="feat-pill"><span class="pill-dot"></span> Live Gradebook</span>
+                <span class="feat-pill"><span class="pill-dot"></span> Multi-Tenant</span>
+            </div>
+
+            <!-- Demo Credentials -->
+            <div class="demo-accounts-box">
+                <div class="demo-header">
+                    <div>
+                        <div class="demo-title">Sandbox Demo Accounts</div>
+                        <div class="demo-subtitle">Click any role card to automatically populate credentials</div>
+                    </div>
+                    <span class="click-hint-badge">Click to fill ↵</span>
+                </div>
+
+                <div class="demo-cards-grid">
+                    <!-- Platform Admin -->
+                    <div class="demo-card demo-platform" onclick="quickFill('admin','Admin@123','platform_admin')" role="button" tabindex="0">
+                        <div class="demo-card-info">
+                            <div class="demo-role-header">
+                                <span class="role-indicator dot-platform"></span>
+                                <span class="demo-role-name">Platform Admin</span>
+                            </div>
+                            <div class="demo-cred-row">
+                                <span class="cred-chip user-chip">admin</span>
+                                <span class="cred-chip pass-chip">Admin@123</span>
+                            </div>
+                        </div>
+                        <div class="demo-action-arrow">→</div>
+                    </div>
+
+                    <!-- College Admin -->
+                    <div class="demo-card demo-college" onclick="quickFill('coep_admin','College@123','college_admin')" role="button" tabindex="0">
+                        <div class="demo-card-info">
+                            <div class="demo-role-header">
+                                <span class="role-indicator dot-college"></span>
+                                <span class="demo-role-name">College Admin (COEP)</span>
+                            </div>
+                            <div class="demo-cred-row">
+                                <span class="cred-chip user-chip">coep_admin</span>
+                                <span class="cred-chip pass-chip">College@123</span>
+                            </div>
+                        </div>
+                        <div class="demo-action-arrow">→</div>
+                    </div>
+
+                    <!-- Teacher -->
+                    <div class="demo-card demo-teacher" onclick="quickFill('teacher1','Teacher@123','teacher_admin')" role="button" tabindex="0">
+                        <div class="demo-card-info">
+                            <div class="demo-role-header">
+                                <span class="role-indicator dot-teacher"></span>
+                                <span class="demo-role-name">Faculty / Teacher</span>
+                            </div>
+                            <div class="demo-cred-row">
+                                <span class="cred-chip user-chip">teacher1</span>
+                                <span class="cred-chip pass-chip">Teacher@123</span>
+                            </div>
+                        </div>
+                        <div class="demo-action-arrow">→</div>
+                    </div>
+
+                    <!-- Student -->
+                    <div class="demo-card demo-student" onclick="quickFill('student1','Student@123','student_admin')" role="button" tabindex="0">
+                        <div class="demo-card-info">
+                            <div class="demo-role-header">
+                                <span class="role-indicator dot-student"></span>
+                                <span class="demo-role-name">Student (CS-101)</span>
+                            </div>
+                            <div class="demo-cred-row">
+                                <span class="cred-chip user-chip">student1</span>
+                                <span class="cred-chip pass-chip">Student@123</span>
+                            </div>
+                        </div>
+                        <div class="demo-action-arrow">→</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT COLUMN: Clean Auth Card -->
+        <div class="form-container-card">
+            
+            <!-- Tab Switcher -->
+            <div class="auth-tabs-wrap">
+                <button class="auth-tab-btn active" id="tabLoginBtn" onclick="switchTab('login')">
+                    Sign In
+                </button>
+                <button class="auth-tab-btn" id="tabRegisterBtn" onclick="switchTab('register')">
+                    Register
+                </button>
+            </div>
+
+            <!-- Alert Notification -->
+            <div id="loginAlert" class="alert hidden"></div>
+
+            <!-- ── SIGN IN FORM ── -->
+            <form id="loginForm" onsubmit="handleLogin(event)" class="auth-form">
+                <div class="form-field-group">
+                    <label for="loginUsername">
+                        <span>Username</span>
+                        <span class="field-hint">e.g. admin or student1</span>
+                    </label>
+                    <div class="input-container">
+                        <input id="loginUsername" type="text" placeholder="Enter username" required autocomplete="username">
+                    </div>
+                </div>
+
+                <div class="form-field-group">
+                    <div class="field-label-row">
+                        <label for="loginPassword">Password</label>
+                    </div>
+                    <div class="input-container input-with-eye">
+                        <input id="loginPassword" type="password" placeholder="••••••••••••" required autocomplete="current-password">
+                        <button type="button" class="eye-toggle-btn" onclick="togglePwd('loginPassword',this)" aria-label="Toggle password visibility">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-field-group">
+                    <label for="loginRoleHint">
+                        <span>Workspace Role</span>
+                        <span class="field-optional">(Optional quick filter)</span>
+                    </label>
+                    <div class="select-container">
+                        <select id="loginRoleHint">
+                            <option value="">Auto-detect from account role</option>
+                            <option value="platform_admin">Platform Administrator</option>
+                            <option value="college_admin">College Administrator</option>
+                            <option value="teacher_admin">Teacher / Faculty</option>
+                            <option value="student_admin">Student Portal</option>
+                        </select>
+                        <span class="select-chevron">▾</span>
+                    </div>
+                </div>
+
+                <button type="submit" id="loginBtn" class="primary-btn">
+                    <span>Enter Workspace</span>
+                    <span class="btn-arrow-icon">→</span>
+                </button>
+
+                <div class="form-footer-tip">
+                    <span class="security-badge">256-bit Encrypted Session Verification</span>
+                </div>
+            </form>
+
+            <!-- ── REGISTER FORM ── -->
+            <form id="registerForm" class="auth-form hidden" onsubmit="handleRegister(event)">
+                <div class="form-grid-2">
+                    <div class="form-field-group">
+                        <label for="regFullName">Full Name</label>
+                        <div class="input-container">
+                            <input id="regFullName" type="text" placeholder="e.g. Maya Joshi" required>
+                        </div>
+                    </div>
+                    <div class="form-field-group">
+                        <label for="regUsername">Username</label>
+                        <div class="input-container">
+                            <input id="regUsername" type="text" placeholder="e.g. maya_j" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-field-group">
+                    <label for="regEmail">Email Address</label>
+                    <div class="input-container">
+                        <input id="regEmail" type="email" placeholder="maya@campus.edu">
+                    </div>
+                </div>
+
+                <div class="form-grid-2">
+                    <div class="form-field-group">
+                        <label for="regRole">Role Assignment</label>
+                        <div class="select-container">
+                            <select id="regRole" onchange="handleRoleToggle()">
+                                <option value="student_admin">Student</option>
+                                <option value="teacher_admin">Teacher / Faculty</option>
+                                <option value="college_admin">College Admin</option>
+                            </select>
+                            <span class="select-chevron">▾</span>
+                        </div>
+                    </div>
+                    <div class="form-field-group">
+                        <label for="regCollege">Campus</label>
+                        <div class="select-container">
+                            <select id="regCollege">
+                                <option>COEP Pune</option>
+                                <option>PICT Pune</option>
+                                <option>MIT Pune</option>
+                            </select>
+                            <span class="select-chevron">▾</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Student Fields -->
+                <div id="studentFields" class="form-grid-2">
+                    <div class="form-field-group">
+                        <label for="regRollNo">Roll Number</label>
+                        <div class="input-container">
+                            <input id="regRollNo" placeholder="CS-208">
+                        </div>
+                    </div>
+                    <div class="form-field-group">
+                        <label for="regBranch">Branch / Major</label>
+                        <div class="input-container">
+                            <input id="regBranch" placeholder="Computer Science">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Password with Strength -->
+                <div class="form-field-group">
+                    <div class="field-label-row">
+                        <label for="regPassword">Password</label>
+                        <span id="strengthLabel" class="strength-indicator-label">Strength: —</span>
+                    </div>
+                    <div class="input-container input-with-eye">
+                        <input id="regPassword" type="password" placeholder="Create strong password" oninput="liveStrength(this.value)" required>
+                        <button type="button" class="eye-toggle-btn" onclick="togglePwd('regPassword',this)" aria-label="Toggle password visibility">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                        </button>
+                    </div>
+
+                    <!-- Clean 3px Strength bar -->
+                    <div class="strength-bar-track">
+                        <div id="strengthBar" class="strength-bar-fill"></div>
+                    </div>
+
+                    <!-- Criteria Pills -->
+                    <div class="criteria-pill-list">
+                        <span class="crit-pill" id="c-len">8+ chars</span>
+                        <span class="crit-pill" id="c-low">a–z</span>
+                        <span class="crit-pill" id="c-up">A–Z</span>
+                        <span class="crit-pill" id="c-num">0–9</span>
+                        <span class="crit-pill" id="c-sym">symbol</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="primary-btn">
+                    <span>Create User Account</span>
+                    <span class="btn-arrow-icon">→</span>
+                </button>
+            </form>
+
+        </div>
+    </main>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     DASHBOARD PAGE
+══════════════════════════════════════════════ -->
+<div id="dashboardPage" class="page hidden">
+
+    <!-- Global Clean Nav -->
+    <header class="dash-navbar">
+        <div class="dash-nav-left">
+            <div class="dash-logo-badge">
+                <div class="brand-logo-box sm">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <span class="brand-title">Campus<strong>OS</strong></span>
+            </div>
+
+            <div class="nav-context-pills">
+                <span id="navRolePill" class="role-pill-badge">—</span>
+                <span id="navCollegeName" class="college-pill-badge">—</span>
+            </div>
+        </div>
+
+        <div class="dash-nav-right">
+            <div class="user-profile-badge">
+                <div class="user-avatar-circle" id="userAvatarInitial">U</div>
+                <span id="navUserName" class="user-name-display">—</span>
+            </div>
+            <button class="logout-action-btn" onclick="handleLogout()" title="Sign out">
+                <span>Sign Out</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="dash-main-container">
+
+        <!-- ══ PLATFORM ADMIN ══ -->
+        <div id="dash-platform" class="role-view rview hidden">
+            <!-- Header Banner -->
+            <div class="role-banner banner-platform">
+                <div>
+                    <span class="banner-eyebrow">CONTROL MATRIX</span>
+                    <h2 class="banner-heading">Platform Administration</h2>
+                    <p class="banner-desc">Global oversight of multi-tenant colleges, institutional roles, and system directory.</p>
+                </div>
+                <button class="refresh-pill-btn" onclick="fetchPlatformStats();fetchPlatformUsers()">
+                    ↻ Refresh Data
+                </button>
+            </div>
+
+            <!-- Clean Stat Cards -->
+            <div class="stat-cards-grid">
+                <div class="stat-card sc-indigo">
+                    <div class="sc-content">
+                        <div class="sc-label">Total Users</div>
+                        <div class="sc-number" id="pTotalUsers">—</div>
+                    </div>
+                </div>
+
+                <div class="stat-card sc-cyan">
+                    <div class="sc-content">
+                        <div class="sc-label">Registered Campuses</div>
+                        <div class="sc-number" id="pTotalColleges">—</div>
+                    </div>
+                </div>
+
+                <div class="stat-card sc-amber">
+                    <div class="sc-content">
+                        <div class="sc-label">Faculty Educators</div>
+                        <div class="sc-number" id="pTotalTeachers">—</div>
+                    </div>
+                </div>
+
+                <div class="stat-card sc-emerald">
+                    <div class="sc-content">
+                        <div class="sc-label">Enrolled Students</div>
+                        <div class="sc-number" id="pTotalStudents">—</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Grid -->
+            <div class="dash-content-grid">
+                <!-- User Registry -->
+                <div class="content-panel-card">
+                    <div class="panel-header-row">
+                        <div>
+                            <h3 class="panel-card-title">User Registry</h3>
+                            <p class="panel-card-subtitle">Real-time credentials and privilege assignments</p>
+                        </div>
+                        <span class="count-badge" id="pUserCount">— records</span>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="modern-data-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>User ID</th>
+                                    <th>Full Name</th>
+                                    <th>Role Privilege</th>
+                                    <th>Campus</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="pUsersBody">
+                                <tr><td colspan="6" class="empty-cell">Loading records…</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Add College -->
+                <div class="side-action-card">
+                    <div class="panel-header-row">
+                        <div>
+                            <h3 class="panel-card-title">Provision College</h3>
+                            <p class="panel-card-subtitle">Register a new campus</p>
+                        </div>
+                    </div>
+
+                    <form id="addCollegeForm" onsubmit="handleAddCollege(event)" class="stacked-action-form">
+                        <div class="form-field-group">
+                            <label>Institution Name</label>
+                            <input id="colName" placeholder="e.g. VJTI Mumbai" required>
+                        </div>
+                        <div class="form-field-group">
+                            <label>Institution Code</label>
+                            <input id="colCode" placeholder="e.g. VJTI05" required>
+                        </div>
+                        <div class="form-field-group">
+                            <label>City</label>
+                            <input id="colCity" placeholder="e.g. Mumbai" required>
+                        </div>
+                        <button type="submit" class="action-submit-btn">
+                            Add College →
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ COLLEGE ADMIN ══ -->
+        <div id="dash-college" class="role-view rview hidden">
+            <!-- Header Banner -->
+            <div class="role-banner banner-college">
+                <div>
+                    <span class="banner-eyebrow">CAMPUS DIRECTORY</span>
+                    <h2 class="banner-heading" id="collegeTitle">Campus Management</h2>
+                    <p class="banner-desc">Manage teachers, student enrollments, and institutional rosters for your campus.</p>
+                </div>
+                <button class="refresh-pill-btn" onclick="fetchCollegeMembers()">
+                    ↻ Refresh
+                </button>
+            </div>
+
+            <!-- College Info Card -->
+            <div class="college-info-banner">
+                <div class="cib-details">
+                    <div class="cib-name" id="cbName">—</div>
+                    <div class="cib-meta">Campus Code: <span class="mono-tag" id="cbCode">—</span></div>
+                </div>
+                <div class="cib-status">
+                    <span class="tag-active">Active Campus Node</span>
+                </div>
+            </div>
+
+            <div class="dash-content-grid">
+                <!-- Directory Column -->
+                <div class="content-panel-card">
+                    <div class="panel-header-row">
+                        <div>
+                            <h3 class="panel-card-title">Campus Members</h3>
+                            <p class="panel-card-subtitle">Faculty members and enrolled students</p>
+                        </div>
+                        <span class="count-badge" id="collegeRecordCount">0 records</span>
+                    </div>
+
+                    <!-- Faculty Section -->
+                    <div class="directory-list-box">
+                        <div class="directory-header-row">
+                            <div class="dir-title">Faculty Educators (<span id="teacherCount">0</span>)</div>
+                        </div>
+                        <div id="teachersList" class="members-cards-container">
+                            <p class="empty-note">No teachers assigned yet.</p>
+                        </div>
+                    </div>
+
+                    <!-- Student Section -->
+                    <div class="directory-list-box">
+                        <div class="directory-header-row">
+                            <div class="dir-title">Enrolled Students (<span id="studentCount">0</span>)</div>
+                        </div>
+                        <div id="studentsList" class="members-cards-container">
+                            <p class="empty-note">No students enrolled yet.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Forms Column -->
+                <div class="side-action-card">
+                    <!-- Add Teacher -->
+                    <div class="form-sub-panel">
+                        <div class="panel-header-row">
+                            <h4 class="form-box-title">Add Faculty Member</h4>
+                        </div>
+                        <form id="addTeacherForm" onsubmit="handleAddTeacher(event)" class="stacked-action-form">
+                            <div class="form-field-group">
+                                <label>Teacher Full Name</label>
+                                <input id="tFullName" placeholder="Prof. Anita Patil" required>
+                            </div>
+                            <div class="form-field-group">
+                                <label>Department</label>
+                                <input id="tDept" placeholder="Computer Engineering" required>
+                            </div>
+                            <div class="form-field-group">
+                                <label>Email Address</label>
+                                <input id="tEmail" type="email" placeholder="anita@campus.edu" required>
+                            </div>
+                            <div class="form-grid-2">
+                                <div class="form-field-group">
+                                    <label>Username</label>
+                                    <input id="tUsername" placeholder="anita_p" required>
+                                </div>
+                                <div class="form-field-group">
+                                    <label>Password</label>
+                                    <input id="tPassword" type="password" placeholder="••••••" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="action-submit-btn">Add Educator →</button>
+                        </form>
+                    </div>
+
+                    <div class="card-inner-divider"></div>
+
+                    <!-- Add Student -->
+                    <div class="form-sub-panel">
+                        <div class="panel-header-row">
+                            <h4 class="form-box-title">Enroll Student</h4>
+                        </div>
+                        <form id="addStudentForm" onsubmit="handleAddStudent(event)" class="stacked-action-form">
+                            <div class="form-field-group">
+                                <label>Student Full Name</label>
+                                <input id="sFullName" placeholder="Rahul Verma" required>
+                            </div>
+                            <div class="form-grid-2">
+                                <div class="form-field-group">
+                                    <label>Roll Number</label>
+                                    <input id="sRollNo" placeholder="CS-205" required>
+                                </div>
+                                <div class="form-field-group">
+                                    <label>Branch</label>
+                                    <input id="sBranch" placeholder="Comp Science">
+                                </div>
+                            </div>
+                            <div class="form-grid-2">
+                                <div class="form-field-group">
+                                    <label>Username</label>
+                                    <input id="sUsername" placeholder="rahul_v" required>
+                                </div>
+                                <div class="form-field-group">
+                                    <label>Password</label>
+                                    <input id="sPassword" type="password" placeholder="••••••" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="action-submit-btn">Enroll Student →</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ TEACHER / FACULTY ══ -->
+        <div id="dash-teacher" class="role-view rview hidden">
+            <!-- Header Banner -->
+            <div class="role-banner banner-teacher">
+                <div>
+                    <span class="banner-eyebrow">FACULTY PORTAL</span>
+                    <h2 class="banner-heading" id="teacherTitle">Grading &amp; Attendance</h2>
+                    <p class="banner-desc">Record exam performance, assign subject scores with automated grades, and log attendance.</p>
+                </div>
+                <button class="refresh-pill-btn" onclick="fetchTeacherData()">
+                    ↻ Refresh
+                </button>
+            </div>
+
+            <div class="dash-content-grid">
+                <!-- Side Action Forms -->
+                <div class="side-action-card">
+                    <!-- Enter Marks -->
+                    <div class="form-sub-panel">
+                        <div class="panel-header-row">
+                            <h4 class="form-box-title">Enter Marks</h4>
+                            <span class="tag-auto">Auto-Graded</span>
+                        </div>
+                        <form id="marksForm" onsubmit="handleEnterMarks(event)" class="stacked-action-form">
+                            <div class="form-field-group">
+                                <label>Student</label>
+                                <div class="select-container">
+                                    <select id="marksStudentSel" required></select>
+                                    <span class="select-chevron">▾</span>
+                                </div>
+                            </div>
+                            <div class="form-field-group">
+                                <label>Subject</label>
+                                <input id="marksSubject" placeholder="e.g. Python Programming" required>
+                            </div>
+                            <div class="form-grid-2">
+                                <div class="form-field-group">
+                                    <label>Marks</label>
+                                    <input id="marksObtained" type="number" min="0" max="100" step="0.5" placeholder="85" required>
+                                </div>
+                                <div class="form-field-group">
+                                    <label>Out Of</label>
+                                    <input id="marksMax" type="number" value="100" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="action-submit-btn">Save Marks →</button>
+                        </form>
+                    </div>
+
+                    <div class="card-inner-divider"></div>
+
+                    <!-- Attendance -->
+                    <div class="form-sub-panel">
+                        <div class="panel-header-row">
+                            <h4 class="form-box-title">Log Attendance</h4>
+                        </div>
+                        <form id="attForm" onsubmit="handleEnterAttendance(event)" class="stacked-action-form">
+                            <div class="form-field-group">
+                                <label>Student</label>
+                                <div class="select-container">
+                                    <select id="attStudentSel" required></select>
+                                    <span class="select-chevron">▾</span>
+                                </div>
+                            </div>
+                            <div class="form-field-group">
+                                <label>Subject</label>
+                                <input id="attSubject" placeholder="e.g. Python Programming" required>
+                            </div>
+                            <div class="form-grid-2">
+                                <div class="form-field-group">
+                                    <label>Total Classes</label>
+                                    <input id="attTotal" type="number" placeholder="40" required>
+                                </div>
+                                <div class="form-field-group">
+                                    <label>Attended</label>
+                                    <input id="attAttended" type="number" placeholder="36" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="action-submit-btn">Save Attendance →</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Master Records Table -->
+                <div class="content-panel-card">
+                    <div class="panel-header-row">
+                        <div>
+                            <h3 class="panel-card-title">Class Performance Records</h3>
+                            <p class="panel-card-subtitle">Aggregated student scores, grade, and attendance</p>
+                        </div>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="modern-data-table">
+                            <thead>
+                                <tr>
+                                    <th>Student</th>
+                                    <th>Subject</th>
+                                    <th>Score</th>
+                                    <th>Grade</th>
+                                    <th>Classes</th>
+                                    <th>Attendance</th>
+                                </tr>
+                            </thead>
+                            <tbody id="teacherRecordsBody">
+                                <tr><td colspan="6" class="empty-cell">No student academic records found.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══ STUDENT PORTAL ══ -->
+        <div id="dash-student" class="role-view rview hidden">
+            <!-- Header Banner -->
+            <div class="role-banner banner-student">
+                <div>
+                    <span class="banner-eyebrow">ACADEMIC REPORT</span>
+                    <h2 class="banner-heading" id="studentTitle">Student Performance Portal</h2>
+                    <p class="banner-desc">Review examination marks, overall percentage, and semester attendance eligibility.</p>
+                </div>
+                <button class="refresh-pill-btn" onclick="fetchStudentData()">
+                    ↻ Refresh
+                </button>
+            </div>
+
+            <!-- Student Summary Stat Cards -->
+            <div class="stat-cards-grid">
+                <div class="stat-card sc-indigo">
+                    <div class="sc-content">
+                        <div class="sc-label">Overall Percentage</div>
+                        <div class="sc-number" id="sPct">—</div>
+                    </div>
+                </div>
+
+                <div class="stat-card sc-emerald">
+                    <div class="sc-content">
+                        <div class="sc-label">Result Status</div>
+                        <div class="sc-number sm-num" id="sStatus">—</div>
+                    </div>
+                </div>
+
+                <div class="stat-card sc-cyan">
+                    <div class="sc-content">
+                        <div class="sc-label">Attendance Rate</div>
+                        <div class="sc-number" id="sAttPct">—</div>
+                    </div>
+                </div>
+
+                <div class="stat-card sc-amber">
+                    <div class="sc-content">
+                        <div class="sc-label">Exam Eligibility</div>
+                        <div class="sc-number sm-num" id="sEligible">—</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dash-content-grid-half">
+                <!-- Marks Table -->
+                <div class="content-panel-card">
+                    <div class="panel-header-row">
+                        <div>
+                            <h3 class="panel-card-title">Course Examination Marks</h3>
+                            <p class="panel-card-subtitle">Official subject marks and grade</p>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="modern-data-table">
+                            <thead>
+                                <tr>
+                                    <th>Subject</th>
+                                    <th>Marks Scored</th>
+                                    <th>Max Marks</th>
+                                    <th>Grade</th>
+                                </tr>
+                            </thead>
+                            <tbody id="sReportBody">
+                                <tr><td colspan="4" class="empty-cell">Loading exam report…</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Attendance Table -->
+                <div class="content-panel-card">
+                    <div class="panel-header-row">
+                        <div>
+                            <h3 class="panel-card-title">Subject Attendance Record</h3>
+                            <p class="panel-card-subtitle">Minimum 75% required for examination</p>
+                        </div>
+                        <span class="tag-warn">75% Mandatory</span>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="modern-data-table">
+                            <thead>
+                                <tr>
+                                    <th>Subject</th>
+                                    <th>Attended</th>
+                                    <th>Total Held</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="sAttBody">
+                                <tr><td colspan="4" class="empty-cell">Loading attendance…</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /dash-main-container -->
+</div><!-- /dashboardPage -->
+
+<!-- Toast Notification -->
+<div id="toastBox" class="toast-box"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

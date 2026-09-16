@@ -1,0 +1,6 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+.idea/
+15_api_testing/

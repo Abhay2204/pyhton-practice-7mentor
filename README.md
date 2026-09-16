@@ -4,7 +4,7 @@
 
 ![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg?style=for-the-badge&logo=python&logoColor=white)
 ![Progress](https://img.shields.io/badge/Progress-In%20Progress-yellow.svg?style=for-the-badge)
-![Modules](https://img.shields.io/badge/Topics-12%20Folders-orange.svg?style=for-the-badge)
+![Modules](https://img.shields.io/badge/Topics-14%20Folders-orange.svg?style=for-the-badge)
 ![License](https://img.shields.io/badge/license-MIT-purple.svg?style=for-the-badge)
 
 <p align="center">
@@ -24,7 +24,7 @@
 ## 📈 Learning Progress & Topic Modules
 
 ```
-Overall Syllabus Completion: [████████████░░░░░░░░░░░░] 50%
+Overall Syllabus Completion: [██████████████░░░░░░░░░░] 58%
 ```
 
 | Topic / Folder | Explanation | Examples | Questions | Practice | Key Concepts Covered |
@@ -41,6 +41,8 @@ Overall Syllabus Completion: [████████████░░░░�
 | **[10. Real World Projects](10_real_world_projects/)** | [`explanation.md`](10_real_world_projects/explanation.md) | [`examples.py`](10_real_world_projects/examples.py) | [`questions.md`](10_real_world_projects/questions.md) | Various Scripts | Newspaper Vendor Stock, SSMV School Roll Management, Pune Colleges NAAC Grade Tracking |
 | **[11. MySQL & Databases](11_mysql/)** | — | [`mysql.sql`](11_mysql/mysql.sql) | — | [`ott_platform.sql`](11_mysql/ott_platform.sql) | `CREATE`, `INSERT`, `SELECT`, `WHERE`, `AND/OR/LIKE/BETWEEN/IN`, `ORDER BY`, `LIMIT`, `GROUP BY`, `HAVING`, `UPDATE`, `DELETE`, `ALTER`, Aggregate Functions |
 | **[12. For Loops & Iteration](12_for_loops/)** | [`explanation.md`](12_for_loops/explanation.md) | [`examples.py`](12_for_loops/examples.py) | [`questions.md`](12_for_loops/questions.md) | [`practice.py`](12_for_loops/practice.py) | `range()` variations, sequence iteration, `enumerate()`, `zip()`, `for-else`, nested patterns, even numbers, multiplication tables, real estate record iteration |
+| **[13. PDF Data Extraction](13_pdf_data_extraction/)** | [`README.md`](13_pdf_data_extraction/README.md) | Various Scripts | — | Various Scripts | Text Extraction (PyPDF2, pdfplumber), Regex Pattern Matching, Table Parsing to CSV, OCR Scanning |
+| **[14. Functions & Modularity](14_functions/)** | [`explanation.md`](14_functions/explanation.md) | [`examples.py`](14_functions/examples.py) | [`questions.md`](14_functions/questions.md) | [`practice.py`](14_functions/practice.py) | `def`, Positional/Keyword/Default arguments, `*args`/`**kwargs`, LEGB Scope, Lambdas, Recursion, Modular Calculator |
 
 ---
 
@@ -345,16 +347,32 @@ pyhton practice 7mentor/
 ├── 📁 11_mysql/                        # MySQL — all topics before JOINs
 │   ├── 🗄️ mysql.sql                   # CREATE, INSERT, SELECT, WHERE, GROUP BY, UPDATE, ALTER
 │   └── 🗄️ ott_platform.sql            # OTT Platform practice data
-└── 📁 12_for_loops/                    # For loop iterations, enumerate, zip, patterns
+├── 📁 12_for_loops/                    # For loop iterations, enumerate, zip, patterns
+│   ├── 📜 README.md
+│   ├── 📜 explanation.md
+│   ├── 🐍 examples.py
+│   ├── 📜 questions.md
+│   ├── 🐍 practice.py
+│   ├── 🐍 even_numbers.py
+│   ├── 🐍 table_of_124.py
+│   ├── 🐍 table_of_1000.py
+│   └── 🐍 real_estate_locations.py
+├── 📁 13_pdf_data_extraction/          # PDF text, regex, table extraction & OCR
+│   ├── 📜 README.md
+│   ├── 🐍 01_read_raw_text.py
+│   ├── 🐍 02_layout_text_pdfplumber.py
+│   ├── 🐍 03_regex_pattern_extraction.py
+│   ├── 🐍 04_table_extraction.py
+│   ├── 🐍 05_scanned_pdf_ocr.py
+│   └── 🐍 create_sample_invoice.py
+└── 📁 14_functions/                    # Functions, arguments, scopes, lambdas & recursion
     ├── 📜 README.md
     ├── 📜 explanation.md
     ├── 🐍 examples.py
     ├── 📜 questions.md
     ├── 🐍 practice.py
-    ├── 🐍 even_numbers.py
-    ├── 🐍 table_of_124.py
-    ├── 🐍 table_of_1000.py
-    └── 🐍 real_estate_locations.py
+    ├── 🐍 process.py
+    └── 🐍 newcalculator.py
 ```
 
 ---
@@ -377,8 +395,9 @@ pyhton practice 7mentor/
    python 08_sets/examples.py
    python 09_dictionaries/examples.py
    python 12_for_loops/even_numbers.py
-   python 12_for_loops/table_of_124.py
-   python 12_for_loops/real_estate_locations.py
+   python 14_functions/examples.py
+   python 14_functions/practice.py
+   python 14_functions/newcalculator.py
    ```
 
 ---
@@ -404,6 +423,13 @@ pyhton practice 7mentor/
 - [x] MySQL — `CREATE`, `INSERT`, `SELECT`, `WHERE`, `AND/OR/LIKE/BETWEEN/IN`
 - [x] MySQL — `ORDER BY`, `LIMIT`, `GROUP BY`, `HAVING`, `UPDATE`, `DELETE`, `ALTER`
 - [x] MySQL — Aggregate functions — `COUNT`, `AVG`, `MAX`, `MIN`, `SUM`
+- [x] PDF text, tabular extraction, regex matching & OCR scanning
+- [x] Functions — `def`, positional, keyword, default arguments
+- [x] Arbitrary arguments — `*args` and `**kwargs`
+- [x] Scope & LEGB name resolution, `global` and `nonlocal`
+- [x] Anonymous lambda functions, `map()`, `filter()`, `reduce()`
+- [x] Recursive functions & base halting conditions
+- [x] Modular program design & multi-file imports
 
 ---
 
