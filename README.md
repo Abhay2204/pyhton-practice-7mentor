@@ -43,6 +43,7 @@ Overall Syllabus Completion: [██████████████░░�
 | **[12. For Loops & Iteration](12_for_loops/)** | [`explanation.md`](12_for_loops/explanation.md) | [`examples.py`](12_for_loops/examples.py) | [`questions.md`](12_for_loops/questions.md) | [`practice.py`](12_for_loops/practice.py) | `range()` variations, sequence iteration, `enumerate()`, `zip()`, `for-else`, nested patterns, even numbers, multiplication tables, real estate record iteration |
 | **[13. PDF Data Extraction](13_pdf_data_extraction/)** | [`README.md`](13_pdf_data_extraction/README.md) | Various Scripts | — | Various Scripts | Text Extraction (PyPDF2, pdfplumber), Regex Pattern Matching, Table Parsing to CSV, OCR Scanning |
 | **[14. Functions & Modularity](14_functions/)** | [`explanation.md`](14_functions/explanation.md) | [`examples.py`](14_functions/examples.py) | [`questions.md`](14_functions/questions.md) | [`practice.py`](14_functions/practice.py) | `def`, Positional/Keyword/Default arguments, `*args`/`**kwargs`, LEGB Scope, Lambdas, Recursion, Modular Calculator |
+| **[16. Classes & OOP](16_classes/)** | [`explanation.md`](16_classes/explanation.md) | [`examples.py`](16_classes/examples.py) | [`questions.md`](16_classes/questions.md) | [`practice.py`](16_classes/practice.py) | Classes, Objects, `__init__` Constructor, `self`, Instance vs Class Variables, Methods, `super()`, Inheritance |
 
 ---
 
